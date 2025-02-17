@@ -25,6 +25,8 @@ class MyClient(discord.Client):
         await tree.sync(guild=guild) # 同步命令到指定服务器
         print("斜杠命令已同步!")
 
+
+
 if __name__ == "__main__":
     http_thread = Thread(target=run_http_server)
     http_thread.start()
@@ -36,6 +38,10 @@ if __name__ == "__main__":
     @tree.command(name="helo", description="Helo!") # name 是命令的名字，description 是描述
     async def hello_command(interaction: discord.Interaction): # interaction 代表用户的交互
         await interaction.response.send_message(f"Helo! {interaction.user.mention}!") # 回复用户
+
+    @tree.command(name="roll", description="roll dice")
+    async def roll_command(interaction: discord.Interaction):
+        await interaction.response.send_message(f"!1d100")
 
     TOKEN = os.environ.get('TOKEN')
 
