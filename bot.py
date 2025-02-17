@@ -18,6 +18,5 @@ async def ping(ctx):
     """回复 Pong!"""
     await ctx.respond("Pong!")
 
-
 # 运行机器人
 bot.run(TOKEN)
