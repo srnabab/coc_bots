@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     @tree.command(name="roll", description="roll dice")
     async def roll_command(interaction: discord.Interaction):
-        await interaction.response.send_message(f"!1d100")
+        await interaction.response.send_message(f"!roll 1d100")
 
     TOKEN = os.environ.get('TOKEN')
 
